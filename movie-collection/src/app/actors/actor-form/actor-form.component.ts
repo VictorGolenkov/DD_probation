@@ -22,7 +22,6 @@ import { provideNativeDateAdapter } from '@angular/material/core';
     ReactiveFormsModule
   ],
   providers: [
-    provideAnimations(),
     provideNativeDateAdapter()
   ],
   templateUrl: './actor-form.component.html',

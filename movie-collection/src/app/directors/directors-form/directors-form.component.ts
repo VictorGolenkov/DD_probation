@@ -27,7 +27,6 @@ import { provideNativeDateAdapter } from '@angular/material/core';
     NgFor
   ],
   providers: [
-    provideAnimations(),
     provideNativeDateAdapter()
   ],
   templateUrl: './directors-form.component.html',
