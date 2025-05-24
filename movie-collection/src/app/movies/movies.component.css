@@ -1,0 +1,28 @@
+.movies-container {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.poster-image {
+  width: 50px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+table {
+  width: 100%;
+}
+
+mat-progress-bar {
+  display: inline-block;
+  width: 100px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
