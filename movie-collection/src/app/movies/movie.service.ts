@@ -10,7 +10,7 @@ export class MovieService {
       year: 1972,
       genre: 'драма',
       rating: 9.2,
-      posterUrl: 'assets/film1.jpg'
+      posterUrl: 'https://victorgolenkov.github.io/DD_probation/movie-collection/public/fil1m1.jpg'
     }
   ];
 

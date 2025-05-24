@@ -1,0 +1,34 @@
+<h2 mat-dialog-title class="Kostiul">Добавить актёра</h2>
+
+<div mat-dialog-content>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Имя</mat-label>
+      <input matInput formControlName="name" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Дата рождения</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birthDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Страна</mat-label>
+      <input matInput formControlName="country" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Ссылка на фото</mat-label>
+      <input matInput formControlName="photoUrl">
+    </mat-form-field>
+
+    <div mat-dialog-actions align="end">
+      <button mat-button type="button" (click)="onCancel()">Отмена</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+        Сохранить
+      </button>
+    </div>
+  </form>
+</div>

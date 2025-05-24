@@ -25,7 +25,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
   ]
 })
 export class MoviesComponent {
-  displayedColumns: string[] = ['poster', 'title', 'year', 'genre', 'rating'];
+  displayedColumns: string[] = ['poster', 'title', 'year', 'genre', 'rating', 'actions'];
   movies: Movie[] = [];
 
   constructor(
@@ -53,5 +53,11 @@ openAddDialog(): void {
       }
     });
   }
+
+  deleteFilm(id: string): void {
+    this.movieService.deleteMovie(id);
+    this.loadMovies();
+  }
+  
 
 }
