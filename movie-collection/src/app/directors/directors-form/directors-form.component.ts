@@ -6,43 +6,67 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { NgFor } from '@angular/common';
 import { provideNativeDateAdapter } from '@angular/material/core';
 
 @Component({
-  selector: 'app-actor-form',
+  selector: 'app-director-form',
   standalone: true,
   imports: [
+    ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatButtonModule,
-    ReactiveFormsModule
+    MatChipsModule,
+    MatIconModule,
+    NgFor
   ],
   providers: [
     provideAnimations(),
     provideNativeDateAdapter()
   ],
-  templateUrl: './actor-form.component.html',
-  styleUrls: ['./actor-form.component.css']
+  templateUrl: './directors-form.component.html',
+  styleUrls: ['./directors-form.component.css']
 })
-export class ActorFormComponent {
+export class DirectorFormComponent {
   form;
 
   constructor(
     private fb: FormBuilder,
-    public dialogRef: MatDialogRef<ActorFormComponent>,
+    public dialogRef: MatDialogRef<DirectorFormComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.form = this.fb.group({
-    name: ['', Validators.required],
-    birthDate: [new Date(), Validators.required],
-    country: ['', Validators.required],
-    photoUrl: ['']
-  });
-}
+      name: ['', Validators.required],
+      birthDate: [new Date(), Validators.required],
+      country: ['', Validators.required],
+      awards: [[] as string[]],
+      photoUrl: ['']
+    });
+  }
+
+  addAward(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const value = input.value.trim();
+
+    if (value) {
+      const currentAwards = this.form.get('awards')?.value || [];
+      this.form.get('awards')?.setValue([...currentAwards, value]);
+      input.value = '';
+    }
+    event.preventDefault();
+  }
+
+  // Добавляем метод для удаления награды
+  removeAward(award: string): void {
+    const currentAwards = this.form.get('awards')?.value || [];
+    this.form.get('awards')?.setValue(currentAwards.filter(a => a !== award));
+  }
 
   onSubmit(): void {
     if (this.form.valid) {

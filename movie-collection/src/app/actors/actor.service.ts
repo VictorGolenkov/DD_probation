@@ -10,7 +10,7 @@ export class ActorService {
       birthDate: new Date(1956, 6, 9),
       country: 'США',
       movies: ['1', '2'],
-      photoUrl: 'https://example.com/tom-hanks.jpg'
+      photoUrl: 'https://victorgolenkov.github.io/DD_probation/movie-collection/public/actor1.jpg'
     }
   ];
 

@@ -26,3 +26,7 @@ mat-progress-bar {
   margin-right: 10px;
   vertical-align: middle;
 }
+
+.warn{
+color:red
+}

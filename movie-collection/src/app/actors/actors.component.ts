@@ -7,13 +7,17 @@ import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { DatePipe } from '@angular/common';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-actors',
   standalone: true,
   imports: [MatTableModule, MatButtonModule, MatIconModule, DatePipe],
   templateUrl: './actors.component.html',
-  styleUrls: ['./actors.component.css']
+  styleUrls: ['./actors.component.css'],
+  providers: [
+    provideAnimations()
+  ],
 })
 export class ActorsComponent {
   displayedColumns: string[] = ['photo', 'name', 'birthDate', 'country', 'actions'];

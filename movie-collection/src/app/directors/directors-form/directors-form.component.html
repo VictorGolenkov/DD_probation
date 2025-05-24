@@ -1,4 +1,4 @@
-<h2 mat-dialog-title class="Kostiul">Добавить актёра</h2>
+<h2 mat-dialog-title class="Kostiul">Добавить режиссёра</h2>
 
 <div mat-dialog-content>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
@@ -10,7 +10,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Дата рождения</mat-label>
       <input matInput [matDatepicker]="picker" formControlName="birthDate">
-      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
@@ -18,6 +18,25 @@
       <mat-label>Страна</mat-label>
       <input matInput formControlName="country" required>
     </mat-form-field>
+
+   <mat-form-field appearance="fill">
+      <mat-label>Награды (введите и нажмите Enter)</mat-label>
+      <input matInput 
+             placeholder="Добавить награду"
+             #awardInput
+             (keydown.enter)="$event.preventDefault()" 
+             (keyup.enter)="addAward($event)">
+    </mat-form-field>
+
+    <mat-chip-listbox>
+      <mat-chip *ngFor="let award of form.get('awards')?.value" 
+                (removed)="removeAward(award)">
+        {{ award }}
+        <button matChipRemove>
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip>
+    </mat-chip-listbox>
 
     <mat-form-field appearance="fill">
       <mat-label>Ссылка на фото</mat-label>
