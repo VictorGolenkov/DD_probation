@@ -10,8 +10,8 @@
 }
 
 .poster-image {
-  width: 50px;
-  height: 75px;
+  width: 100px;
+  height: 150px;
   object-fit: cover;
   border-radius: 4px;
 }

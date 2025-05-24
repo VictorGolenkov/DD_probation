@@ -11,7 +11,7 @@ export class DirectorService {
       country: 'США',
       movies: ['1', '2'],
       awards: ['Оскар', 'Золотой глобус'],
-      photoUrl: 'https://victorgolenkov.github.io/DD_probation/movie-collection/public/director1.jpg'
+      photoUrl: 'assets/director1.jpg'
     }
   ];
 

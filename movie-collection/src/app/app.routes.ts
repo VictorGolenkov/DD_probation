@@ -14,5 +14,5 @@ export const routes: Routes = [
     loadComponent: () => import('./directors/directors.component').then(m => m.DirectorsComponent) 
   },
   { path: '', redirectTo: '/movies', pathMatch: 'full' },
-  { path: '**', redirectTo: '/movies' } // Опционально: 404
+  { path: '**', redirectTo: '/movies' } 
 ];

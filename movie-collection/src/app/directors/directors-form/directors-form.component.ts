@@ -62,7 +62,6 @@ export class DirectorFormComponent {
     event.preventDefault();
   }
 
-  // Добавляем метод для удаления награды
   removeAward(award: string): void {
     const currentAwards = this.form.get('awards')?.value || [];
     this.form.get('awards')?.setValue(currentAwards.filter(a => a !== award));
