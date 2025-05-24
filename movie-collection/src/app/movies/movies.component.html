@@ -16,7 +16,7 @@
     <ng-container matColumnDef="poster">
       <th mat-header-cell *matHeaderCellDef>Постер</th>
       <td mat-cell *matCellDef="let movie">
-        <img [src]="movie.posterUrl || 'assets/default-poster.jpg'" 
+        <img [src]="movie.posterUrl || 'assets/nothing.jpg'" 
              alt="Постер фильма" 
              class="poster-image">
       </td>

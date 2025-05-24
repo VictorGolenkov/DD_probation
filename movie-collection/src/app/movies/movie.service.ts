@@ -10,7 +10,7 @@ export class MovieService {
       year: 1972,
       genre: 'драма',
       rating: 9.2,
-      posterUrl: 'https://example.com/poster1.jpg'
+      posterUrl: 'assets/film1.jpg'
     }
   ];
 
