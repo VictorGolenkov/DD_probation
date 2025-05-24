@@ -1,7 +1,12 @@
 .Kostiul{
     color:white;
+    align-self: center;
 } 
 
 .warn{
 color:red
+}
+
+.elem {
+    display: flex;
 }

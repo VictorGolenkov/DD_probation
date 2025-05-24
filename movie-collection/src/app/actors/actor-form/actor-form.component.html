@@ -2,24 +2,24 @@
 
 <div mat-dialog-content>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="elem">
       <mat-label>Имя</mat-label>
       <input matInput formControlName="name" required>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="elem">
       <mat-label>Дата рождения</mat-label>
       <input matInput [matDatepicker]="picker" formControlName="birthDate">
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="elem">
       <mat-label>Страна</mat-label>
       <input matInput formControlName="country" required>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="elem">
       <mat-label>Ссылка на фото</mat-label>
       <input matInput formControlName="photoUrl">
     </mat-form-field>
